@@ -8,11 +8,8 @@ import br.com.jeiton.spotjelify.main.models.Podcast;
 public class Main {
     public static void main (String[] args) {
 
-        Music music = new Music();
-        music.setName("Hynm for the weekend");
-        music.setComposer("Chris Martin");
+        Music music = new Music("Hynm for the weekend", 2015);
         music.setSinger("ColdPlay");
-        music.setReleaseYear(2015);
         music.setViews(10000);
         music.setDurationInMinutes(4);
         music.evaluate(8.5);
@@ -24,13 +21,11 @@ public class Main {
 
         music.displayTechnicalSheet();
 
-        Podcast podcast = new Podcast();
+        Podcast podcast = new Podcast("Space Today", 2023);
 
-        podcast.setName("Space Today");
         podcast.setPodcaster("Sergio Sacani");
         podcast.setParticipants("Gabriel Pato");
         podcast.setViews(50000);
-        podcast.setReleaseYear(2023);
         podcast.setSubject("Hackers");
         podcast.setDurationInMinutes(90);
         podcast.evaluate(1);

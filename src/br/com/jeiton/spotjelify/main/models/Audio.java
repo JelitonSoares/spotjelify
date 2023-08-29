@@ -8,6 +8,11 @@ public class Audio {
     protected int views;
     private double sumOfGrades;
 
+    public Audio (String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
+
     public String getName() {
         return name;
     }
@@ -68,5 +73,8 @@ public class Audio {
         return average;
     }
 
-
+    @Override
+    public String toString() {
+        return "Nome: " + name + " (" + releaseYear + " )";
+    }
 }

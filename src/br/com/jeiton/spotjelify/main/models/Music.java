@@ -22,6 +22,10 @@ public class Music extends Audio implements Sortable {
         this.composer = composer;
     }
 
+    public Music (String name, int releaseYear) {
+        super(name, releaseYear);
+    }
+
     @Override
     public void displayTechnicalSheet() {
         System.out.println("""

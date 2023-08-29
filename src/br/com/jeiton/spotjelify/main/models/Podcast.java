@@ -9,6 +9,10 @@ public class Podcast extends Audio implements Sortable {
     private String podcaster;
     private String participants;
     private String subject;
+
+    public Podcast (String name, int releaseYear) {
+        super(name, releaseYear);
+    }
     public String getPodcaster() {
         return podcaster;
     }
