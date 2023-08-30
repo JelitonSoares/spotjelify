@@ -6,7 +6,11 @@ import br.com.jeiton.spotjelify.main.models.Music;
 import br.com.jeiton.spotjelify.main.models.Podcast;
 
 import javax.swing.plaf.BorderUIResource;
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainList {
     public static void main (String[] args) {
@@ -57,5 +61,11 @@ public class MainList {
                 System.out.println("Classificação: " + (((Sortable) audio).getClassification()));
             }
         });
+
+        Collections.sort(list);
+        System.out.println(list);
+
+        list.sort(Comparator.comparing(Audio::getReleaseYear));
+        System.out.println(list);
     }
 }
