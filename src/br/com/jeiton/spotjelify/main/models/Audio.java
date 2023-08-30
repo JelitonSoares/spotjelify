@@ -1,6 +1,8 @@
 package br.com.jeiton.spotjelify.main.models;
 
-public class Audio {
+import java.util.Collections;
+
+public class Audio implements Comparable<Audio> {
     protected String name;
     protected int releaseYear;
     protected int durationInMinutes;
@@ -8,7 +10,7 @@ public class Audio {
     protected int views;
     private double sumOfGrades;
 
-    public Audio (String name, int releaseYear) {
+    public Audio(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
     }
@@ -54,7 +56,7 @@ public class Audio {
     }
 
 
-    public void displayTechnicalSheet () {
+    public void displayTechnicalSheet() {
         System.out.println("""
                 Nome: %s
                 Ano de lançamento: %d
@@ -63,12 +65,12 @@ public class Audio {
                 """.formatted(name, releaseYear, durationInMinutes, takeMedium()));
     }
 
-    public void evaluate (double grade) {
+    public void evaluate(double grade) {
         sumOfGrades += grade;
         totalGrades++;
     }
 
-    protected double takeMedium () {
+    protected double takeMedium() {
         double average = sumOfGrades / totalGrades;
         return average;
     }
@@ -77,4 +79,12 @@ public class Audio {
     public String toString() {
         return "Nome: " + name + " (" + releaseYear + " )";
     }
+
+    @Override
+    public int compareTo(Audio otherAudio) {
+        return this.getName().compareTo(otherAudio.getName());
+    }
 }
+
+
+
